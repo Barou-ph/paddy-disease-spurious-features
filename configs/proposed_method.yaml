@@ -1,0 +1,27 @@
+# Copy this file and fill in research-specific choices.
+# Keep the same shared data/model/training/evaluation contract.
+
+seed: 42
+
+data:
+  image_size: 224
+  batch_size: 32
+  num_workers: 4
+
+model:
+  name: efficientnet_b0
+  pretrained: true
+  num_classes: 10
+
+training:
+  epochs: 30
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  loss: cross_entropy
+  scheduler: none
+
+evaluation:
+  primary_metric: f1_macro
+
+output:
+  checkpoint_dir: checkpoints/proposed_method

@@ -1,11 +1,7 @@
-torch
-torchvision
 numpy
 pandas
-scikit-learn
-matplotlib
-seaborn
-opencv-python
 Pillow
 PyYAML
-tqdm
+scikit-learn
+torch
+torchvision
