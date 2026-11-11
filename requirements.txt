@@ -3,5 +3,9 @@ pandas
 Pillow
 PyYAML
 scikit-learn
+scipy
 torch
 torchvision
+tqdm
+matplotlib
+seaborn

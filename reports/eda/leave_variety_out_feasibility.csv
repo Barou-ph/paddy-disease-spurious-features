@@ -1,0 +1,11 @@
+variety,n_images,n_classes_present,min_class_count,missing_classes
+ADT45,6992,10,107,-
+KarnatakaPonni,988,7,10,"bacterial_panicle_blight, normal, tungro"
+Ponni,657,9,6,bacterial_leaf_streak
+AtchayaPonni,461,4,27,"bacterial_leaf_blight, bacterial_leaf_streak, bacterial_panicle_blight, brown_spot, dead_heart, normal"
+Zonal,399,8,6,"bacterial_panicle_blight, normal"
+AndraPonni,377,4,14,"bacterial_leaf_blight, bacterial_leaf_streak, brown_spot, downy_mildew, normal, tungro"
+Onthanel,351,8,4,"bacterial_panicle_blight, brown_spot"
+IR20,114,3,10,"bacterial_leaf_streak, bacterial_panicle_blight, brown_spot, downy_mildew, hispa, normal, tungro"
+RR,36,2,18,"bacterial_leaf_blight, bacterial_leaf_streak, bacterial_panicle_blight, blast, brown_spot, downy_mildew, hispa, tungro"
+Surya,32,4,2,"bacterial_leaf_streak, bacterial_panicle_blight, brown_spot, dead_heart, hispa, normal"
