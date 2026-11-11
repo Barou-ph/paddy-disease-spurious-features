@@ -1,0 +1,96 @@
+{
+  "n_train_rows": 10407,
+  "n_missing_files": 0,
+  "n_train_ids_duplicated": 0,
+  "null_counts": {
+    "label": 0,
+    "variety": 0,
+    "age": 0
+  },
+  "classes": {
+    "normal": 1764,
+    "blast": 1738,
+    "hispa": 1594,
+    "dead_heart": 1442,
+    "tungro": 1088,
+    "brown_spot": 965,
+    "downy_mildew": 620,
+    "bacterial_leaf_blight": 479,
+    "bacterial_leaf_streak": 380,
+    "bacterial_panicle_blight": 337
+  },
+  "n_classes": 10,
+  "imbalance_ratio_max_over_min": 5.234421364985163,
+  "varieties": {
+    "ADT45": 6992,
+    "KarnatakaPonni": 988,
+    "Ponni": 657,
+    "AtchayaPonni": 461,
+    "Zonal": 399,
+    "AndraPonni": 377,
+    "Onthanel": 351,
+    "IR20": 114,
+    "RR": 36,
+    "Surya": 32
+  },
+  "largest_variety_share": 0.6718554818871914,
+  "age": {
+    "count": 10407.0,
+    "mean": 64.0436244835207,
+    "std": 8.958830144799885,
+    "min": 45.0,
+    "25%": 60.0,
+    "50%": 67.0,
+    "75%": 70.0,
+    "max": 82.0
+  },
+  "age_n_unique": 18,
+  "assoc": {
+    "label_vs_variety": {
+      "cramers_v": 0.27341949626915923,
+      "nmi": 0.1605424012942659
+    },
+    "label_vs_age": {
+      "cramers_v": 0.33577048949801014,
+      "nmi": 0.21649029470633396
+    }
+  },
+  "metadata_only_baseline_5fold": {
+    "majority_class": {
+      "acc": 0.16950128812858298,
+      "macro_f1": 0.028986930796297532
+    },
+    "variety": {
+      "acc": 0.3062373027819977,
+      "macro_f1": 0.18887392940346232
+    },
+    "age": {
+      "acc": 0.36533168445488917,
+      "macro_f1": 0.21466746899277594
+    },
+    "variety+age": {
+      "acc": 0.4411463490406085,
+      "macro_f1": 0.35196260977018606
+    }
+  },
+  "image_sizes_top": {
+    "480x640": 10403,
+    "640x480": 4
+  },
+  "n_distinct_image_sizes": 2,
+  "exact_duplicate_images": 146,
+  "exact_duplicate_groups": 72,
+  "exact_dup_groups_with_conflicting_labels": 0,
+  "near_duplicate_pairs_dist<=4": 2268,
+  "near_dup_pairs_cross_label": 86,
+  "near_dup_pairs_same_variety_frac": 0.9801587301587301,
+  "near_dup_pairs_same_age_frac": 0.9982363315696648,
+  "near_dup_pairs_dist<=0": 139,
+  "near_dup_pairs_dist<=2": 747,
+  "near_dup_pairs_dist<=4": 2268,
+  "images_in_any_near_dup_pair": 2451,
+  "n_test_images": 3469,
+  "test_distinct_sizes": 2,
+  "test_exact_dups_of_train": 51,
+  "test_images_with_near_dup_in_train": 914
+}
