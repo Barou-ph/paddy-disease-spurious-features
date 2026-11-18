@@ -1,0 +1,375 @@
+{
+  "seed": 42,
+  "group_dist": 8,
+  "conflict_dist": 4,
+  "cleaning": {
+    "n_images": 10407,
+    "n_dropped_label_conflict": 82,
+    "n_dropped_exact_duplicate": 74,
+    "n_clean": 10251,
+    "n_groups": 6640,
+    "n_groups_with_2plus_images": 1366,
+    "largest_group": 45,
+    "n_label_conflict_pairs": 86
+  },
+  "splits": {
+    "random": {
+      "description": "stratified group split of all clean images",
+      "dropped_ood_near_copies": 0,
+      "subsets": {
+        "train": {
+          "n": 7168,
+          "class_counts": {
+            "bacterial_leaf_blight": 331,
+            "bacterial_leaf_streak": 251,
+            "bacterial_panicle_blight": 234,
+            "blast": 1195,
+            "brown_spot": 664,
+            "dead_heart": 1000,
+            "downy_mildew": 422,
+            "hispa": 1101,
+            "normal": 1218,
+            "tungro": 752
+          },
+          "missing_classes": [],
+          "meta_aligned_frac": 0.44796316964285715,
+          "varieties": 10,
+          "age_range": [
+            45,
+            82
+          ]
+        },
+        "val": {
+          "n": 1538,
+          "class_counts": {
+            "bacterial_leaf_blight": 70,
+            "bacterial_leaf_streak": 54,
+            "bacterial_panicle_blight": 51,
+            "blast": 256,
+            "brown_spot": 143,
+            "dead_heart": 215,
+            "downy_mildew": 90,
+            "hispa": 235,
+            "normal": 262,
+            "tungro": 162
+          },
+          "missing_classes": [],
+          "meta_aligned_frac": 0.3992197659297789,
+          "varieties": 10,
+          "age_range": [
+            45,
+            82
+          ]
+        },
+        "test": {
+          "n": 1545,
+          "class_counts": {
+            "bacterial_leaf_blight": 70,
+            "bacterial_leaf_streak": 65,
+            "bacterial_panicle_blight": 50,
+            "blast": 256,
+            "brown_spot": 142,
+            "dead_heart": 214,
+            "downy_mildew": 90,
+            "hispa": 235,
+            "normal": 262,
+            "tungro": 161
+          },
+          "missing_classes": [],
+          "meta_aligned_frac": 0.43106796116504853,
+          "varieties": 10,
+          "age_range": [
+            45,
+            80
+          ]
+        }
+      }
+    },
+    "variety": {
+      "description": "in-domain ADT45; test_ood = the other 9 varieties",
+      "dropped_ood_near_copies": 38,
+      "subsets": {
+        "train": {
+          "n": 4798,
+          "class_counts": {
+            "bacterial_leaf_blight": 279,
+            "bacterial_leaf_streak": 71,
+            "bacterial_panicle_blight": 181,
+            "blast": 534,
+            "brown_spot": 574,
+            "dead_heart": 679,
+            "downy_mildew": 216,
+            "hispa": 573,
+            "normal": 1005,
+            "tungro": 686
+          },
+          "missing_classes": [],
+          "meta_aligned_frac": 0.34160066694456026,
+          "varieties": 1,
+          "age_range": [
+            45,
+            82
+          ]
+        },
+        "val": {
+          "n": 1033,
+          "class_counts": {
+            "bacterial_leaf_blight": 60,
+            "bacterial_leaf_streak": 13,
+            "bacterial_panicle_blight": 39,
+            "blast": 115,
+            "brown_spot": 124,
+            "dead_heart": 145,
+            "downy_mildew": 53,
+            "hispa": 122,
+            "normal": 215,
+            "tungro": 147
+          },
+          "missing_classes": [],
+          "meta_aligned_frac": 0.3155856727976767,
+          "varieties": 1,
+          "age_range": [
+            45,
+            82
+          ]
+        },
+        "test": {
+          "n": 1035,
+          "class_counts": {
+            "bacterial_leaf_blight": 59,
+            "bacterial_leaf_streak": 14,
+            "bacterial_panicle_blight": 38,
+            "blast": 116,
+            "brown_spot": 123,
+            "dead_heart": 146,
+            "downy_mildew": 55,
+            "hispa": 122,
+            "normal": 215,
+            "tungro": 147
+          },
+          "missing_classes": [],
+          "meta_aligned_frac": 0.30821256038647343,
+          "varieties": 1,
+          "age_range": [
+            45,
+            82
+          ]
+        },
+        "test_ood": {
+          "n": 3347,
+          "class_counts": {
+            "bacterial_leaf_blight": 61,
+            "bacterial_leaf_streak": 272,
+            "bacterial_panicle_blight": 77,
+            "blast": 942,
+            "brown_spot": 128,
+            "dead_heart": 459,
+            "downy_mildew": 273,
+            "hispa": 747,
+            "normal": 307,
+            "tungro": 81
+          },
+          "missing_classes": [],
+          "meta_aligned_frac": 0.20645354048401554,
+          "varieties": 9,
+          "age_range": [
+            45,
+            80
+          ]
+        }
+      }
+    },
+    "age_old": {
+      "description": "in-domain age <= 70 days; test_ood = age >= 72 days",
+      "dropped_ood_near_copies": 0,
+      "subsets": {
+        "train": {
+          "n": 5974,
+          "class_counts": {
+            "bacterial_leaf_blight": 227,
+            "bacterial_leaf_streak": 244,
+            "bacterial_panicle_blight": 154,
+            "blast": 844,
+            "brown_spot": 499,
+            "dead_heart": 669,
+            "downy_mildew": 422,
+            "hispa": 1093,
+            "normal": 1164,
+            "tungro": 658
+          },
+          "missing_classes": [],
+          "meta_aligned_frac": 0.42684968195513895,
+          "varieties": 10,
+          "age_range": [
+            45,
+            70
+          ]
+        },
+        "val": {
+          "n": 1288,
+          "class_counts": {
+            "bacterial_leaf_blight": 50,
+            "bacterial_leaf_streak": 64,
+            "bacterial_panicle_blight": 32,
+            "blast": 180,
+            "brown_spot": 107,
+            "dead_heart": 143,
+            "downy_mildew": 90,
+            "hispa": 234,
+            "normal": 249,
+            "tungro": 139
+          },
+          "missing_classes": [],
+          "meta_aligned_frac": 0.42857142857142855,
+          "varieties": 10,
+          "age_range": [
+            45,
+            70
+          ]
+        },
+        "test": {
+          "n": 1281,
+          "class_counts": {
+            "bacterial_leaf_blight": 49,
+            "bacterial_leaf_streak": 52,
+            "bacterial_panicle_blight": 33,
+            "blast": 182,
+            "brown_spot": 108,
+            "dead_heart": 143,
+            "downy_mildew": 90,
+            "hispa": 234,
+            "normal": 249,
+            "tungro": 141
+          },
+          "missing_classes": [],
+          "meta_aligned_frac": 0.4238875878220141,
+          "varieties": 10,
+          "age_range": [
+            45,
+            70
+          ]
+        },
+        "test_ood": {
+          "n": 1708,
+          "class_counts": {
+            "bacterial_leaf_blight": 145,
+            "bacterial_leaf_streak": 10,
+            "bacterial_panicle_blight": 116,
+            "blast": 501,
+            "brown_spot": 235,
+            "dead_heart": 474,
+            "downy_mildew": 0,
+            "hispa": 10,
+            "normal": 80,
+            "tungro": 137
+          },
+          "missing_classes": [
+            "downy_mildew"
+          ],
+          "meta_aligned_frac": 0.0468384074941452,
+          "varieties": 3,
+          "age_range": [
+            72,
+            82
+          ]
+        }
+      }
+    },
+    "age_young": {
+      "description": "in-domain age >= 55 days; test_ood = age <= 50 days",
+      "dropped_ood_near_copies": 3,
+      "subsets": {
+        "train": {
+          "n": 6004,
+          "class_counts": {
+            "bacterial_leaf_blight": 249,
+            "bacterial_leaf_streak": 188,
+            "bacterial_panicle_blight": 234,
+            "blast": 862,
+            "brown_spot": 584,
+            "dead_heart": 941,
+            "downy_mildew": 307,
+            "hispa": 878,
+            "normal": 1097,
+            "tungro": 664
+          },
+          "missing_classes": [],
+          "meta_aligned_frac": 0.45519653564290474,
+          "varieties": 9,
+          "age_range": [
+            55,
+            82
+          ]
+        },
+        "val": {
+          "n": 1287,
+          "class_counts": {
+            "bacterial_leaf_blight": 54,
+            "bacterial_leaf_streak": 37,
+            "bacterial_panicle_blight": 51,
+            "blast": 186,
+            "brown_spot": 126,
+            "dead_heart": 202,
+            "downy_mildew": 67,
+            "hispa": 189,
+            "normal": 234,
+            "tungro": 141
+          },
+          "missing_classes": [],
+          "meta_aligned_frac": 0.3962703962703963,
+          "varieties": 9,
+          "age_range": [
+            55,
+            82
+          ]
+        },
+        "test": {
+          "n": 1297,
+          "class_counts": {
+            "bacterial_leaf_blight": 53,
+            "bacterial_leaf_streak": 55,
+            "bacterial_panicle_blight": 50,
+            "blast": 185,
+            "brown_spot": 125,
+            "dead_heart": 202,
+            "downy_mildew": 63,
+            "hispa": 187,
+            "normal": 234,
+            "tungro": 143
+          },
+          "missing_classes": [],
+          "meta_aligned_frac": 0.4448727833461835,
+          "varieties": 9,
+          "age_range": [
+            55,
+            80
+          ]
+        },
+        "test_ood": {
+          "n": 1660,
+          "class_counts": {
+            "bacterial_leaf_blight": 115,
+            "bacterial_leaf_streak": 90,
+            "bacterial_panicle_blight": 0,
+            "blast": 474,
+            "brown_spot": 114,
+            "dead_heart": 84,
+            "downy_mildew": 165,
+            "hispa": 314,
+            "normal": 177,
+            "tungro": 127
+          },
+          "missing_classes": [
+            "bacterial_panicle_blight"
+          ],
+          "meta_aligned_frac": 0.10662650602409639,
+          "varieties": 8,
+          "age_range": [
+            45,
+            50
+          ]
+        }
+      }
+    }
+  }
+}

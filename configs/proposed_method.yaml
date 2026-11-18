@@ -7,6 +7,9 @@ data:
   image_size: 224
   batch_size: 32
   num_workers: 4
+  image_root: data/raw/paddy-disease-classification/train_images
+  split_dir: data/splits
+  split: random  # random | variety | age_old | age_young -- see data/README.md
 
 model:
   name: efficientnet_b0
