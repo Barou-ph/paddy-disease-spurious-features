@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from copy import deepcopy
 from pathlib import Path
 from typing import Any
 
@@ -30,3 +31,10 @@ def get(config: dict[str, Any], dotted_key: str, default: Any = None) -> Any:
             return default
         value = value[key]
     return value
+
+
+def clone_config(config: dict[str, Any]) -> dict[str, Any]:
+    """Return a deep copy suitable for experiment records."""
+    copied = deepcopy(config)
+    copied.pop("_config_path", None)
+    return copied

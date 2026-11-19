@@ -1,23 +1,19 @@
 from __future__ import annotations
 
 import torch.nn as nn
-from torchvision.models import (
-    EfficientNet_B0_Weights,
-    efficientnet_b0,
-)
+from torchvision.models import EfficientNet_B0_Weights, efficientnet_b0
 
 
 def build_model(config: dict) -> nn.Module:
     """Build a model from the shared experiment config."""
     model_cfg = config.get("model", {})
-    name = model_cfg.get("name", "efficientnet_b0").lower()
+    name = str(model_cfg.get("name", "efficientnet_b0")).lower()
     num_classes = int(model_cfg.get("num_classes", 10))
     pretrained = bool(model_cfg.get("pretrained", True))
 
     if name != "efficientnet_b0":
         raise ValueError(
-            f"Unsupported model '{name}'. Add it to src/models/factory.py "
-            "or keep the factory as the shared model entry point."
+            f"Unsupported model '{name}'. Add it to src/models/factory.py."
         )
 
     weights = EfficientNet_B0_Weights.DEFAULT if pretrained else None

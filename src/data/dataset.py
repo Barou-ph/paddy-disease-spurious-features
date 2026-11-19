@@ -10,15 +10,16 @@ from torch.utils.data import Dataset
 
 class PaddyImageDataset(Dataset):
     """
-    Dataset for a manifest CSV.
+    Dataset for a manifest CSV/DataFrame.
 
     Required columns:
         image_path, label
 
     Optional metadata columns:
-        variety, age, split, group_id
+        variety, age, group_id, split
 
-    image_path is resolved relative to image_root when it is not absolute.
+    ``label_to_index`` should normally be created from the training manifest
+    and reused for validation/test so all splits share the same label mapping.
     """
 
     def __init__(
@@ -36,7 +37,9 @@ class PaddyImageDataset(Dataset):
         required = {"image_path", "label"}
         missing = required - set(self.df.columns)
         if missing:
-            raise ValueError(f"Manifest is missing required columns: {sorted(missing)}")
+            raise ValueError(
+                f"Manifest is missing required columns: {sorted(missing)}"
+            )
 
         self.image_root = Path(image_root) if image_root else None
         self.transform = transform
@@ -48,8 +51,17 @@ class PaddyImageDataset(Dataset):
         else:
             self.label_to_index = dict(label_to_index)
 
+        unknown = sorted(set(labels) - set(self.label_to_index))
+        if unknown:
+            raise ValueError(
+                f"Manifest contains labels not present in label_to_index: {unknown}"
+            )
+
         self.classes = [
-            label for label, _ in sorted(self.label_to_index.items(), key=lambda x: x[1])
+            label
+            for label, _ in sorted(
+                self.label_to_index.items(), key=lambda item: item[1]
+            )
         ]
 
     def __len__(self) -> int:
@@ -63,7 +75,14 @@ class PaddyImageDataset(Dataset):
 
     def __getitem__(self, index: int):
         row = self.df.iloc[index]
-        image = Image.open(self._image_path(str(row["image_path"]))).convert("RGB")
+        image_path = self._image_path(str(row["image_path"]))
+
+        try:
+            image = Image.open(image_path).convert("RGB")
+        except Exception as exc:
+            raise RuntimeError(
+                f"Failed to load image at index={index}: {image_path}"
+            ) from exc
 
         if self.transform is not None:
             image = self.transform(image)

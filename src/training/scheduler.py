@@ -5,7 +5,7 @@ import torch
 
 def build_scheduler(optimizer, config: dict):
     cfg = config.get("training", {})
-    name = cfg.get("scheduler", "none").lower()
+    name = str(cfg.get("scheduler", "none")).lower()
 
     if name == "none":
         return None
