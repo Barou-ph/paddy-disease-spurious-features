@@ -2,8 +2,8 @@
   "split": "age_young",
   "evaluation": "test_ood",
   "n_samples": 1660,
-  "accuracy": 0.9789156626506024,
-  "precision_macro": 0.9785433698967546,
-  "recall_macro": 0.9746090784214887,
-  "f1_macro": 0.9758756774914819
+  "accuracy": 0.42048192771084336,
+  "precision_macro": 0.4121974299294726,
+  "recall_macro": 0.4474783941057643,
+  "f1_macro": 0.3929081752506111
 }

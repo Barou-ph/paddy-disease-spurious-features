@@ -2,8 +2,8 @@
   "split": "variety",
   "evaluation": "test_ood",
   "n_samples": 3347,
-  "accuracy": 0.9713175978488199,
-  "precision_macro": 0.94734790623484,
-  "recall_macro": 0.9631953828363825,
-  "f1_macro": 0.9539783826154841
+  "accuracy": 0.4111144308335823,
+  "precision_macro": 0.3840764168876178,
+  "recall_macro": 0.38647223072443815,
+  "f1_macro": 0.33076303361466997
 }
