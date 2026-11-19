@@ -11,7 +11,10 @@ from sklearn.metrics import (
 def compute_metrics(y_true, y_pred) -> dict[str, float]:
     """Shared classification metrics. Macro-F1 is the primary project metric."""
     precision, recall, f1, _ = precision_recall_fscore_support(
-        y_true, y_pred, average="macro", zero_division=0
+        y_true,
+        y_pred,
+        average="macro",
+        zero_division=0,
     )
 
     return {

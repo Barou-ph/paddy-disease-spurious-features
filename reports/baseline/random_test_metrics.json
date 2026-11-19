@@ -1,0 +1,9 @@
+{
+  "split": "random",
+  "evaluation": "test",
+  "n_samples": 1545,
+  "accuracy": 0.9268608414239482,
+  "precision_macro": 0.9152298955620699,
+  "recall_macro": 0.9106300098136388,
+  "f1_macro": 0.9117743475165054
+}

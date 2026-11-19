@@ -1,15 +1,20 @@
-# Copy this file and fill in research-specific choices.
-# Keep the same shared data/model/training/evaluation contract.
+﻿# Research-specific configuration template.
+# Keep baseline data/model/evaluation settings comparable unless the
+# research question explicitly requires a change.
 
 seed: 42
+deterministic: true
+device: auto
 
 data:
-  image_size: 224
-  batch_size: 32
-  num_workers: 4
   image_root: data/raw/paddy-disease-classification/train_images
+  image_size: 224
+  batch_size: 16
+  num_workers: 0
   split_dir: data/splits
-  split: random  # random | variety | age_old | age_young -- see data/README.md
+  split: random
+  horizontal_flip: true
+  rotation_degrees: 10
 
 model:
   name: efficientnet_b0
@@ -18,13 +23,15 @@ model:
 
 training:
   epochs: 30
+  optimizer: adamw
   learning_rate: 0.0001
   weight_decay: 0.0001
   loss: cross_entropy
-  scheduler: none
+  scheduler: cosine
+  early_stopping_patience: 7
 
 evaluation:
   primary_metric: f1_macro
 
 output:
-  checkpoint_dir: checkpoints/proposed_method
+  checkpoint_dir: experiments/runs/proposed_method

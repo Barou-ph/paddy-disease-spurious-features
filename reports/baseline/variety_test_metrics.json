@@ -1,0 +1,9 @@
+{
+  "split": "variety",
+  "evaluation": "test",
+  "n_samples": 1035,
+  "accuracy": 0.9903381642512077,
+  "precision_macro": 0.9901896212823207,
+  "recall_macro": 0.9884978626509954,
+  "f1_macro": 0.9892643955687598
+}

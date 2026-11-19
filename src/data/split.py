@@ -52,14 +52,13 @@ def stratified_split(
     seed: int = 42,
     label_col: str = "label",
 ):
-    """
-    Create train/val/test DataFrames with stratification by label.
-
-    For person/plant/plot/product-related leakage, use group-aware splitting
-    instead of this helper.
-    """
+    """Create reproducible train/val/test splits stratified by class."""
+    if not 0 < val_size < 1 or not 0 < test_size < 1:
+        raise ValueError("val_size and test_size must be in (0, 1).")
     if val_size + test_size >= 1:
         raise ValueError("val_size + test_size must be < 1.")
+    if label_col not in df.columns:
+        raise ValueError(f"Missing label column: {label_col}")
 
     train_df, temp_df = train_test_split(
         df,
@@ -76,10 +75,9 @@ def stratified_split(
         stratify=temp_df[label_col],
     )
 
-    return (
-        train_df.reset_index(drop=True),
-        val_df.reset_index(drop=True),
-        test_df.reset_index(drop=True),
+    return tuple(
+        part.reset_index(drop=True)
+        for part in (train_df, val_df, test_df)
     )
 
 

@@ -1,9 +1,13 @@
-# Robustness experiments should reuse the same base model/training settings
-# and change only the evaluation subset or perturbation being studied.
+# Robustness evaluation should reuse the trained baseline/proposed checkpoints.
+# Do not retrain on the evaluation subsets unless the experiment explicitly
+# defines a new training condition.
 
 seed: 42
+deterministic: true
+device: auto
 
 data:
+  image_root: data/raw
   image_size: 224
   batch_size: 32
   num_workers: 4
@@ -16,15 +20,8 @@ model:
   pretrained: true
   num_classes: 10
 
-training:
-  epochs: 30
-  learning_rate: 0.0001
-  weight_decay: 0.0001
-  loss: cross_entropy
-  scheduler: none
-
 evaluation:
   primary_metric: f1_macro
 
 output:
-  checkpoint_dir: checkpoints/robustness
+  checkpoint_dir: experiments/runs/robustness

@@ -1,0 +1,9 @@
+{
+  "split": "age_old",
+  "evaluation": "test",
+  "n_samples": 1281,
+  "accuracy": 0.970335675253708,
+  "precision_macro": 0.9672915349467541,
+  "recall_macro": 0.9719555014726582,
+  "f1_macro": 0.9685348069863384
+}
